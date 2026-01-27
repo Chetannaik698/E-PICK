@@ -11,7 +11,9 @@ const Home = () => {
       
       <section className='hero'>
         <div className="theme">
-          <div className="left"></div>
+          <div className="left">
+              
+          </div>
           <div className="right">
             <img src={hero} alt="" />
           </div>
