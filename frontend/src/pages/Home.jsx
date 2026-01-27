@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Navbar from '../components/Navbar'
 import '../styles/Home.css'
+import hero from '../assets/hero.png'
 
 const Home = () => {
 
@@ -9,8 +10,12 @@ const Home = () => {
       <Navbar />
       
       <section className='hero'>
-        <div className="left">left</div>
-        <div className="right">right</div>
+        <div className="theme">
+          <div className="left"></div>
+          <div className="right">
+            <img src={hero} alt="" />
+          </div>
+        </div>
       </section>
 
     </div>
