@@ -1,9 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Navbar from '../components/Navbar'
+import '../styles/Home.css'
+import hero from '../assets/hero.png'
 
 const Home = () => {
+
   return (
     <div>
-      <h1>Welcome to the Home Page</h1>
+      <Navbar />
+      
+      <section className='hero'>
+        <div className="theme">
+          <div className="left">
+              
+          </div>
+          <div className="right">
+            <img src={hero} alt="" />
+          </div>
+        </div>
+      </section>
+
     </div>
   )
 }
