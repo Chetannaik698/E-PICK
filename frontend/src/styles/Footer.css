@@ -1,0 +1,88 @@
+:root {
+  --color-heading: #414141;
+  --color-body-text: #616161;
+  --color-brand-accent: #c586a1;
+}
+
+.footer {
+  padding: 4rem;
+  text-align: left;
+  display: flex;
+  gap: 4rem;
+  justify-content: space-between;
+  border-top: 1px solid #e0e0e0;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 280px;
+}
+
+.left-section h2 {
+  font-size: 1.8rem;
+  color: #000;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.left-section h2 span {
+  color: var(--color-brand-accent);
+  font-size: 2rem;
+}
+
+.left-section p {
+  font-size: 0.95rem;
+  color: var(--color-body-text);
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+.center-section h3,
+.right-section h3 {
+  font-size: 1.1rem;
+  color: var(--color-heading);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.center-section ul,
+.right-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.center-section li,
+.right-section li {
+  margin-bottom: 0.8rem;
+}
+
+.center-section a,
+.right-section a {
+  text-decoration: none;
+  color: var(--color-body-text);
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.center-section a:hover,
+.right-section a:hover {
+  color: var(--color-heading);
+}
+
+.footer-bottom {
+  width: 100%;
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 2rem;
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: var(--color-body-text);
+}
