@@ -6,6 +6,7 @@ import Collection from './Pages/Collection'
 import Contact from './Pages/Contact'
 import Cart from './Pages/Cart'
 import Admin from './Pages/Admin'
+import ProductDetails from './pages/ProductDetails'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/product" element={<ProductDetails />} />
         </Routes>
       </Router>
     </>
