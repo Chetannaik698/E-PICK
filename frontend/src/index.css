@@ -1,0 +1,20 @@
+:root {
+  --color-heading: #414141;
+  --color-body-text: #616161;
+  --color-brand-accent: #C586A1;
+  --color-hero-pink: #FFEBF1;
+  --color-primary-black: #000000;
+  --color-pure-white: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f5f5f5;
+  color: var(--color-body-text);
+}
