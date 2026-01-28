@@ -22,6 +22,10 @@ const Home = () => {
             <img src={hero} alt="Hero" />
           </div>
         </div>
+
+        <div className="latest-collection">
+          
+        </div>
       </section>
 
     </div>
