@@ -1,0 +1,62 @@
+.discount {
+  padding: 4rem 2rem;
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.discount h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.discount p {
+  font-size: 0.95rem;
+  color: #999;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.discount-input {
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto;
+  gap: 0;
+}
+
+.discount-input input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  color: #999;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.discount-input input:focus {
+  border-color: #999;
+}
+
+.discount-input input::placeholder {
+  color: #ccc;
+}
+
+.discount-input button {
+  padding: 1rem 2.5rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  letter-spacing: 1px;
+}
+
+.discount-input button:hover {
+  background-color: #333;
+}

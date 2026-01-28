@@ -4,9 +4,15 @@ import search from "../assets/search.png";
 import profile from "../assets/profile.png";
 import cart from "../assets/cart.png";
 import "../styles/Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation();
+
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
+
   return (
     <header>
       <nav>
@@ -15,10 +21,10 @@ const Navbar = () => {
         </div>
 
         <ul className="nav-items">
-          <li><Link to="/">HOME</Link></li>
-          <li><Link to="/collection">COLLECTION</Link></li>
-          <li><Link to="/about">ABOUT</Link></li>
-          <li><Link to="/contact">CONTACT</Link></li>
+          <li><Link to="/" className={isActive("/") ? "active" : ""}>HOME</Link></li>
+          <li><Link to="/collection" className={isActive("/collection") ? "active" : ""}>COLLECTION</Link></li>
+          <li><Link to="/about" className={isActive("/about") ? "active" : ""}>ABOUT</Link></li>
+          <li><Link to="/contact" className={isActive("/contact") ? "active" : ""}>CONTACT</Link></li>
         </ul>
 
         <div className="admin">
