@@ -17,7 +17,7 @@ const Navbar = () => {
     <header>
       <nav>
         <div className="logo">
-          <img src={logo} alt="Logo" />
+         <Link to="/"><img src={logo} alt="Logo" /></Link>
         </div>
 
         <ul className="nav-items">
@@ -35,7 +35,7 @@ const Navbar = () => {
           <img src={search} alt="Search" />
           <img src={profile} alt="Profile" />
           <div className="cart-icon">
-            <img src={cart} alt="Cart" />
+            <Link to="/cart"><img src={cart} alt="Cart" /></Link>
             <span>0</span>
           </div>
         </div>
