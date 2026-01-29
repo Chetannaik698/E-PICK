@@ -2,6 +2,8 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import '../styles/Cart.css'
+import image8 from "../assets/image8.png";
+import deleteIcon from "../assets/delete.png";
 
 const Cart = () => {
   return (
@@ -11,10 +13,36 @@ const Cart = () => {
       <div id="cart-container">
         {/* LEFT */}
         <div id="cart-left">
-          <h1>
+          <h2>
             YOUR <span>CART</span>
             <span className="line">——</span>
-          </h1>
+          </h2>
+          <div className="cart-items">
+  <div className="cart-item">
+    <img
+      src={image8}
+      alt="product"
+      className="cart-img"
+    />
+
+    <div className="cart-info">
+      <h4>Kid Tapered Slim Fit Trouser</h4>
+      <p>$38 <span>XL</span></p>
+    </div>
+
+    <input
+      type="number"
+      value="2"
+      className="cart-qty"
+    />
+
+    <div className="cart-delete">
+      
+      <img src={deleteIcon}alt="delete"/>
+    </div>
+  </div>
+</div>
+
         </div>
 
         {/* RIGHT */}
