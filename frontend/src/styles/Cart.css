@@ -1,0 +1,55 @@
+#cart-container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  padding: 80px 100px;
+}
+
+/* LEFT */
+#cart-left {
+  width: 60%;
+}
+
+/* RIGHT */
+#cart-right {
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;  /* right side */
+  align-items: center;        /* 🔥 vertical center */
+}
+
+/* TOTALS BOX */
+#cart-totals {
+  width: 420px;
+}
+
+
+
+#cart-totals h3 {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 14px;
+}
+
+.total {
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+#cart-totals button {
+  width: 60%;
+  margin-top: 30px;
+  padding: 14px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-left:180px;
+}
