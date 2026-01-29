@@ -1,0 +1,68 @@
+.admin-page{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(202, 198, 198);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-pannel{
+    height: 45vh;
+    width: 55vh;
+    background-color:white;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.email{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.email input{
+    outline: none;
+      width: 100%;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-size: 14px;
+  margin-top: 5px;
+  
+}
+.email p{
+    margin-top: 15px;
+
+}
+
+.password{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+} 
+.password p{
+    margin-top: 10px;
+
+}
+
+.password input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-size: 14px;
+  outline: none;
+  margin-top: 5px;
+}
+
+
+
+.login-btn button{
+  padding: 10px 135px;
+  margin-top: 15px;
+  background-color: black;
+  color:white; 
+  border-radius: 5px;
+}

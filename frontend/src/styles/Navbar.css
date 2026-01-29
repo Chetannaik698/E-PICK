@@ -91,6 +91,10 @@ nav .admin {
   font-size: 0.7rem;
   cursor: pointer;
 }
+.admin a{
+text-decoration: none;
+color:#000;
+}
 
 nav .nav-functions {
   display: flex;
