@@ -33,7 +33,6 @@
 .about-content {
   display: flex;
   gap: 60px;
-  align-items: center;
 }
 
 .about-image {
@@ -56,6 +55,7 @@
   line-height: 1.8;
   color: #444;
   margin-bottom: 20px;
+  text-align: left;
 }
 
 .about-text h3 {
@@ -64,50 +64,46 @@
   font-weight: 600;
 }
 
-
-.text{
+.text {
   line-height: 5;
-  padding: 5px;
+  padding: 15px;
   font-size: 25px;
   letter-spacing: 1px;
+  margin-top: 60px;
+  margin-width: 30px;
+  text-align: left;
 }
 
-.text span{
+.text span {
   font-weight: 700;
-  
 }
 
-.card-section{
-    width: 90%;
-    height: 250px;
-    margin: 2px ;
-    display: flex;
-    /* border: 1px solid black; */
-    padding: 10px;
+.card-section {
+  width: 90%;
+  height: 250px;
+  margin: 2px;
+  display: flex;
+  /* border: 1px solid black; */
+  padding: 10px;
 }
 
 /* Card Design */
-.card{
-    flex: 1;
-    background-color: white;
-    padding: 40px;
-    border: 1px solid #777171;
-    /* border-right: 1px solid rgb(151, 144, 144); */
+.card {
+  flex: 1;
+  background-color: white;
+  padding: 40px;
+  border: 1px solid #777171;
+  /* border-right: 1px solid rgb(151, 144, 144); */
 }
 
 /* Heading */
-.card h3{
-    color: #333;
-    margin-bottom: 20px;
+.card h3 {
+  color: #333;
+  margin-bottom: 20px;
 }
 
-/* Paragraph */
-.card p{
-    color: #666;
-    line-height: 1.6;
-    font-size: 16px;
+.card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 16px;
 }
-
-
-
-
