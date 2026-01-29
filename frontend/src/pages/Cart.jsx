@@ -1,4 +1,3 @@
-
 import React from 'react'
 import Navbar from '../components/Navbar'
 import '../styles/Cart.css'
@@ -45,10 +44,9 @@ const Cart = () => {
           </div>
         </div>
       </div>
-    </>
-      <h1>Cart Page</h1>
+
       <Footer />
-    </div>
+    </>
   )
 }
 
