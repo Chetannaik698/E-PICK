@@ -2,6 +2,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import '../styles/Cart.css'
+import Footer from '../components/Footer'
 
 const Cart = () => {
   return (
@@ -45,6 +46,9 @@ const Cart = () => {
         </div>
       </div>
     </>
+      <h1>Cart Page</h1>
+      <Footer />
+    </div>
   )
 }
 
