@@ -1,13 +1,18 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
+<<<<<<< HEAD
 import '../styles/ProductDetails.css'
 import image1 from '../assets/image1.png'
 import rating from '../assets/rating.png'
+=======
+import Footer from '../components/Footer'
+>>>>>>> 30d4aaa36acec01aba427c7b09c5ed4aae7281fc
 
 const ProductDetails = () => {
   return (
     <div>
       <Navbar />
+<<<<<<< HEAD
       <div className="product-page">
         <div className="product-item">
           <div className="review-picture1">
@@ -70,6 +75,10 @@ const ProductDetails = () => {
 
       </div>
 
+=======
+      <h1>Product Details</h1>
+      <Footer />
+>>>>>>> 30d4aaa36acec01aba427c7b09c5ed4aae7281fc
     </div>
   )
 }
