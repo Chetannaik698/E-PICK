@@ -27,7 +27,7 @@ const ProductDetails = () => {
               <p>(214)</p>
             </div>
             <div className="item-price">
-              <p>$56</p>
+              <p>₹799</p>
               <p class="item-description">A lightweight, usually knitted, pullover shirt, close-fitting and <br />
                 with a round neckline and short sleeves, worn <br />
                 as an undershirt or outer garment.</p>
