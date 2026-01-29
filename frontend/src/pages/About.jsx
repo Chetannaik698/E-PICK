@@ -50,6 +50,10 @@ const About = () => {
             </p>
           </div>
         </div>
+        <div className="text">
+          
+        </div>
+        <div className="div">hhhhhh</div>
       </section>
 
       <Discount />
