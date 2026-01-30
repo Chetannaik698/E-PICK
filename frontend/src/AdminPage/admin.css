@@ -12,7 +12,7 @@
     width: 55vh;
     background-color:white;
     border-radius: 10px;
-    padding: 20px;
+    padding: 25px;
 }
 
 .email{
@@ -42,7 +42,7 @@
     gap: 5px;
 } 
 .password p{
-    margin-top: 10px;
+    margin-top: 15px;
 
 }
 
@@ -60,6 +60,7 @@
 
 
 .login-btn button{
+width: 100%;
   padding: 10px 135px;
   margin-top: 15px;
   background-color: black;
