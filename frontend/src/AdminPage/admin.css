@@ -1,69 +1,96 @@
-.admin-page{
-    height: 100vh;
+.admin-page {
+    min-height: 100vh;
     width: 100%;
-    background-color: rgb(202, 198, 198);
+    background: white;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px; /* space on small screens */
 }
 
-.admin-pannel{
-    height: 45vh;
-    width: 55vh;
-    background-color:white;
-    border-radius: 10px;
-    padding: 25px;
+/* Login Card */
+.admin-pannel {
+    width: 100%;
+    max-width: 400px;   /* prevents it from getting too wide */
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
-.email{
+/* Headings (if you add one) */
+.admin-pannel h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Email + Password Sections */
+.email, .password {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
-.email input{
-    outline: none;
-      width: 100%;
-  height: 40px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 0 10px;
-  font-size: 14px;
-  margin-top: 5px;
-  
-}
-.email p{
+
+.email p,
+.password p {
     margin-top: 15px;
-
+    font-weight: 500;
 }
 
-.password{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-} 
-.password p{
-    margin-top: 15px;
-
-}
-
+/* Inputs */
+.email input,
 .password input {
-  width: 100%;
-  height: 40px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 0 10px;
-  font-size: 14px;
-  outline: none;
-  margin-top: 5px;
+    width: 100%;
+    height: 42px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 0 12px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.email input:focus,
+.password input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102,126,234,0.2);
+}
+
+/* Button */
+.login-btn button {
+    width: 100%;
+    padding: 12px 0;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #ff512f, #dd2476);
+    color: white;
+    border-radius: 6px;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
 
+@media (max-width: 480px) {
+    .admin-pannel {
+        padding: 25px 18px;
+        border-radius: 10px;
+    }
 
-.login-btn button{
-width: 100%;
-  padding: 10px 135px;
-  margin-top: 15px;
-  background-color: black;
-  color:white; 
-  border-radius: 5px;
+    .email input,
+    .password input {
+        height: 40px;
+        font-size: 13px;
+    }
+
+    .login-btn button {
+        font-size: 14px;
+        padding: 11px 0;
+    }
 }

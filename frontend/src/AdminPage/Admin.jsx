@@ -8,14 +8,14 @@ const Admin = () => {
         <div className="admin-pannel">
           
 
-          <h3>Admin Panel</h3>
+          <h2>Admin Panel</h2>
           <div className="email">
             <p>Email Address</p>
             <input type="text" placeholder='Enter your email ' />
              </div>
              <div className="password">
             <p>Password</p>
-            <input type="text" placeholder='Enter your password' />
+            <input type="text" placeholder='your@email.com' />
             </div>
          
 
