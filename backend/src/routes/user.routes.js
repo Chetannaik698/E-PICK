@@ -1,10 +1,11 @@
 import express from "express";
 import {
   getMe,
+  loginAdmin,
   loginUser,
   registerUser,
 } from "../controller/user.controller.js";
-import { protect } from "../middleware/user.middleware.js";
+import { adminOnly, protect } from "../middleware/user.middleware.js";
 
 const router = express.Router();
 
@@ -12,5 +13,8 @@ const router = express.Router();
 router.post("/register", registerUser);
 router.post("/login", loginUser);
 router.get("/me", protect, getMe);
+
+//admin routes
+router.post("/admin/login", protect, adminOnly, loginAdmin);
 
 export default router;

@@ -2,6 +2,7 @@ import userModel from "../models/User.model.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
+//user registeration
 export const registerUser = async (req, res) => {
   const { name, email, password } = req.body;
 
@@ -41,6 +42,7 @@ export const registerUser = async (req, res) => {
   }
 };
 
+//user login
 export const loginUser = async (req, res) => {
   const { email, password } = req.body;
 
@@ -72,6 +74,7 @@ export const loginUser = async (req, res) => {
   } catch (error) {}
 };
 
+//user get me
 export const getMe = async (req, res) => {
   try {
     const user = req.user;
@@ -87,3 +90,40 @@ export const getMe = async (req, res) => {
   }
 };
 
+//admin login
+export const loginAdmin = async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const admin = await userModel.findOne({ email, role: "admin" });
+
+    if (!admin) {
+      return res.status(400).json({
+        message: "Invalid email or password",
+      });
+    }
+
+    const isPasswordValid = await bcrypt.compare(password, admin.password);
+
+    if (!isPasswordValid) {
+      return res.status(400).json({ message: "Invalid email or password" });
+    }
+
+    const token = jwt.sign({ id: admin._id }, process.env.JWT_SECRET);
+
+    res.cookie("token", token);
+
+    return res.status(201).json({
+      message: "Admin logged in successfully",
+      admin: {
+        id: admin._id,
+        name: admin.name,
+        email: admin.email,
+      },
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "Internal server error",
+    });
+  }
+};
