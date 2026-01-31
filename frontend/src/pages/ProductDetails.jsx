@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 import '../styles/ProductDetails.css'
 import image1 from '../assets/image1.png'
 import rating from '../assets/rating.png'
