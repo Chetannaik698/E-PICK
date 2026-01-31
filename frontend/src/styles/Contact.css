@@ -126,4 +126,70 @@
     .contact-info h4 {
         font-size: 13px;
     }
+<<<<<<< HEAD
 }
+=======
+    
+    .explore button {
+        background-color: white;
+        padding: 15px;
+    }
+    
+    .sub {
+        display: flex;
+        /* border: 1px solid black; */
+        height: 200px;
+        padding-top: 20px;
+        flex-direction: column;
+        background-color: white;
+    }
+    
+    .subscribe {
+        display: flex;
+        flex: 1;
+        /* border: 1px solid black; */
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .text {
+        display: flex;
+        flex: 1;
+        /* border: 1px solid black; */
+        align-items: center;
+        justify-content: center;
+        height: 8px;
+    }
+    
+    .enter {
+        display: flex;
+        flex: 1;
+        /* border: 1px solid black; */
+    }
+    
+    .enter1 {
+        display: flex;
+        flex: 1.5;
+        /* border: 1px solid black; */
+        align-items: center;
+        justify-content: end;
+    }
+    
+    .but {
+        display: flex;
+        flex: 1;
+        /* border: 1px solid black; */
+    }
+    
+    #subscribing {
+        border: 1px solid black;
+        background-color: black;
+        color: white;
+    }
+    
+    .enter1 input {
+        padding: 15px;
+        border: o.5px solid white;
+        width: 300px;
+    }
+>>>>>>> 3f202b23865cf12e42e251e61063a4df9803db6e

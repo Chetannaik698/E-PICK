@@ -64,14 +64,14 @@ const Collection = () => {
         <div className="image">
         <img src={image2} alt="Product" />
         </div>
-        <div class="image-text">
+        <div className="image-text">
           <p>Kid Tapered Slim Fit<br /> Trouser</p>
-          <p class="price">$38</p>
+          <p className="price">$38</p>
         </div>
       </div>
 
-        <div class="container2">
-        <div class="image">
+        <div className="container2">
+        <div className="image">
        <img src={image3} alt="Product" />
         </div>
         <div className="image-text">
@@ -80,8 +80,8 @@ const Collection = () => {
         </div>
       </div>
 
-        <div class="container2">
-        <div class="image">
+        <div className="container2">
+        <div className="image">
        <img src={image4} alt="Product" />
         </div>
         <div className="image-text">
@@ -114,13 +114,13 @@ const Collection = () => {
       </div>
      
 
-        <div class="container2">
-        <div class="image">
+        <div className="container2">
+        <div className="image">
         <img src={image7} alt="Product" />
         </div>
-        <div class="image-text">
+        <div className="image-text">
           <p>Kid Tapered Slim Fit <br />Trouser</p>
-          <p class="price">$38</p>
+          <p className="price">$38</p>
         </div>
       </div>
 
@@ -129,7 +129,7 @@ const Collection = () => {
         <div className="image">
           <img src={image7} alt="Product" />
         </div>
-        <div class="image-text">
+        <div className="image-text">
           <p>Kid Tapered Slim Fit <br /> Trouser</p>
           <p className="price">$38</p>
         </div>
@@ -156,13 +156,13 @@ const Collection = () => {
         </div>
       </div>
 
-        <div class="container2">
-        <div class="image">
+        <div className="container2">
+        <div className="image">
           <img src={image1} alt="Product" />
         </div>
-        <div class="image-text">
+        <div className="image-text">
           <p>Kid Tapered Slim Fit <br /> Trouser</p>
-          <p class="price">$38</p>
+          <p className="price">$38</p>
         </div>
       </div>
 
