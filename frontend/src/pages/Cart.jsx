@@ -1,12 +1,9 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import '../styles/Cart.css'
-<<<<<<< HEAD
 import image8 from "../assets/image8.png";
 import deleteIcon from "../assets/delete.png";
-=======
 import Footer from '../components/Footer'
->>>>>>> 5f388b2d61fb69e9e02169ac87007b77fc874287
 
 const Cart = () => {
   return (
