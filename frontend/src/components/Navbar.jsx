@@ -28,7 +28,7 @@ const Navbar = () => {
         </ul>
 
         <div className="admin">
-          <span>Admin Panel</span>
+          <Link to={"/admin"}><span>Admin Panel</span></Link>
         </div>
 
         <div className="nav-functions">

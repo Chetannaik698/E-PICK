@@ -1,6 +1,9 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import '../styles/ProductDetails.css'
+import image1 from '../assets/image1.png'
+import rating from '../assets/rating.png'
 
 const ProductDetails = () => {
   return (
@@ -25,7 +28,7 @@ const ProductDetails = () => {
               <p>(214)</p>
             </div>
             <div className="item-price">
-              <p>$56</p>
+              <p>₹799</p>
               <p class="item-description">A lightweight, usually knitted, pullover shirt, close-fitting and <br />
                 with a round neckline and short sleeves, worn <br />
                 as an undershirt or outer garment.</p>

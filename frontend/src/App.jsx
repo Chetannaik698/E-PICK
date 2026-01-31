@@ -4,12 +4,16 @@ import Home from './Pages/Home'
 import About from './Pages/About'
 import Collection from './pages/Collection'
 import Contact from './Pages/Contact'
+import Collection from './Pages/Collection'
+import Contact from './pages/Contact'
 import Cart from './Pages/Cart'
-import Admin from './Pages/Admin'
 import ProductDetails from './pages/ProductDetails'
+import Admin from './AdminPage/Admin'
 
 function App() {
   return (
+
+
     <>
       <Router>
         <Routes>
@@ -18,8 +22,8 @@ function App() {
           <Route path="/collection" element={<Collection />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/admin" element={<Admin />} />
           <Route path="/product" element={<ProductDetails />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </Router>
     </>
