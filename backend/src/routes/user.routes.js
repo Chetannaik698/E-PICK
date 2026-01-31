@@ -15,6 +15,6 @@ router.post("/login", loginUser);
 router.get("/me", protect, getMe);
 
 //admin routes
-router.post("/admin/login", protect, adminOnly, loginAdmin);
+router.post("/admin/login", loginAdmin);
 
 export default router;
