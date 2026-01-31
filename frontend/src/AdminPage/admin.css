@@ -83,6 +83,10 @@
         border-radius: 10px;
     }
 
+    .admin-pannel h2 {
+        font-size: 18px;
+    }
+
     .email input,
     .password input {
         height: 40px;
