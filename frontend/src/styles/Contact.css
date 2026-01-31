@@ -79,7 +79,7 @@
         flex: 0.5;
     }
     
-    button {
+    .explore button {
         background-color: white;
         padding: 15px;
     }
