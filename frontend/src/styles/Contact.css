@@ -1,195 +1,186 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
 
 .contact {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background-color: white;
-    padding-bottom: 20px; /* prevents gap before next section */
+  width: 100%;
+  background-color: #fff;
+  padding: 60px 4rem;
 }
 
-
-.contact-us {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 32px;
-    font-weight: 600;
-    height: 120px;
-    text-align: center;
+.contact-header {
+  text-align: center;
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
 }
 
-.contact-details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    padding: 40px 20px;
-    flex-wrap: wrap; /* allows stacking */
+.contact-header h1 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #6b6b6b;
+  letter-spacing: 1px;
 }
 
-
-.contact-pic {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.header-line {
+  width: 60px;
+  height: 2px;
+  background-color: #6b6b6b;
 }
 
-.contact-pic img {
-    width: 100%;
-    max-width: 450px;
-    height: auto; /* important */
-    border-radius: 10px;
+.contact-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-image {
+  flex: 1;
+  max-width: 500px;
+}
+
+.contact-image img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .contact-info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    max-width: 500px;
+  flex: 1;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
-.contact-info h2 {
-    font-size: 24px;
+.store-section h2,
+.careers-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #3a3a3a;
+  margin-bottom: 20px;
 }
 
-.contact-info h3 {
-    font-weight: 500;
-    line-height: 1.6;
+.store-section p {
+  font-size: 1rem;
+  color: #6b6b6b;
+  line-height: 1.8;
+  margin-bottom: 15px;
 }
 
-.contact-info h4 {
-    font-weight: 400;
-    line-height: 1.6;
-}
-.explore button {
-    width: 180px;
-    padding: 12px;
-    background-color: black;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    transition: 0.3s;
+.address {
+  margin-bottom: 20px;
 }
 
-.explore button:hover {
-    background-color: #333;
+.careers-section p {
+  font-size: 1rem;
+  color: #6b6b6b;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.explore-btn {
+  padding: 14px 40px;
+  background-color: transparent;
+  color: #000;
+  border: 1.5px solid #000;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.explore-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .contact {
+    padding: 50px 2rem;
+  }
+
+  .contact-content {
+    gap: 50px;
+  }
 }
 
 @media (max-width: 768px) {
-    .contact-us {
-        font-size: 26px;
-        height: 90px;
-    }
+  .contact {
+    padding: 40px 1.5rem;
+  }
 
-    .contact-details {
-        flex-direction: column;
-        padding: 20px;
-        gap: 25px;
-        text-align: center;
-    }
+  .contact-header {
+    margin-bottom: 40px;
+  }
 
-    .contact-info {
-        align-items: center;
-    }
+  .contact-header h1 {
+    font-size: 1.5rem;
+  }
 
-    .contact-info h2 {
-        font-size: 20px;
-    }
+  .header-line {
+    width: 50px;
+  }
 
-    .contact-info h3,
-    .contact-info h4 {
-        font-size: 14px;
-    }
+  .contact-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
 
-    .explore button {
-        width: 100%;
-        max-width: 220px;
-    }
+  .contact-image,
+  .contact-info {
+    max-width: 100%;
+  }
+
+  .contact-info {
+    gap: 35px;
+  }
+
+  .store-section h2,
+  .careers-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .store-section p,
+  .careers-section p {
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 480px) {
-    .contact-us {
-        font-size: 22px;
-        height: 80px;
-    }
+  .contact {
+    padding: 30px 1rem;
+  }
 
-    .contact-info h3,
-    .contact-info h4 {
-        font-size: 13px;
-    }
-<<<<<<< HEAD
+  .contact-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .header-line {
+    width: 40px;
+  }
+
+  .store-section h2,
+  .careers-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .store-section p,
+  .careers-section p {
+    font-size: 0.9rem;
+  }
+
+  .explore-btn {
+    width: 100%;
+    padding: 12px 30px;
+  }
 }
-=======
-    
-    .explore button {
-        background-color: white;
-        padding: 15px;
-    }
-    
-    .sub {
-        display: flex;
-        /* border: 1px solid black; */
-        height: 200px;
-        padding-top: 20px;
-        flex-direction: column;
-        background-color: white;
-    }
-    
-    .subscribe {
-        display: flex;
-        flex: 1;
-        /* border: 1px solid black; */
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .text {
-        display: flex;
-        flex: 1;
-        /* border: 1px solid black; */
-        align-items: center;
-        justify-content: center;
-        height: 8px;
-    }
-    
-    .enter {
-        display: flex;
-        flex: 1;
-        /* border: 1px solid black; */
-    }
-    
-    .enter1 {
-        display: flex;
-        flex: 1.5;
-        /* border: 1px solid black; */
-        align-items: center;
-        justify-content: end;
-    }
-    
-    .but {
-        display: flex;
-        flex: 1;
-        /* border: 1px solid black; */
-    }
-    
-    #subscribing {
-        border: 1px solid black;
-        background-color: black;
-        color: white;
-    }
-    
-    .enter1 input {
-        padding: 15px;
-        border: o.5px solid white;
-        width: 300px;
-    }
->>>>>>> 3f202b23865cf12e42e251e61063a4df9803db6e
