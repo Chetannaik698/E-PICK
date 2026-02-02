@@ -21,13 +21,13 @@ export const createProduct = async (req, res) => {
     if (req.files && req.files.length > 0) {
       for (const file of req.files) {
         const result = await cloudinary.uploader.upload(file.path, {
-          folder: "products",
+          folder: "uploads",
         });
 
         imageUrls.push(result.secure_url);
 
-        //remove local files
-        fs.unlinkSync(file.path);
+        // //remove local files
+        // fs.unlinkSync(file.path);
       }
     }
 
@@ -139,4 +139,3 @@ export const getBestsellerProducts = async (req, res) => {
   }
 };
 
-export const 

@@ -12,7 +12,7 @@ import { upload } from "../middleware/upload.middleware.js";
 const router = express.Router();
 
 //product routes
-router.post("/", protect, adminOnly, upload.array("images", 4), createProduct);
+router.post("/", protect, adminOnly, upload.array("images", 5), createProduct);
 router.get("/", getAllProducts);
 router.get("/bestsellers", getBestsellerProducts);
 router.get("/:id", getProductById);
