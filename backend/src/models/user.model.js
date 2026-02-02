@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from "mongoose"
 
 const userSchema = new mongoose.Schema(
   {
@@ -22,8 +22,8 @@ const userSchema = new mongoose.Schema(
       default: "user",
     },
     cartData: {
-      type: Array,
-      default: [],
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Cart",
     },
   },
   {
