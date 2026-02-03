@@ -1,5 +1,5 @@
 import React from 'react'
-import '../AdminPage/Admin.css'
+import './Admin.css'
 import AdminNav from '../assets/admin-logo.png'
 import Add from '../assets/add.png'
 import list from '../assets/check.png'
