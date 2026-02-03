@@ -87,7 +87,11 @@ const Navbar = () => {
           </div>
         </div>
 
-        <button className="hamburger" onClick={toggleMenu} aria-label="Toggle menu">
+        <button
+          className="hamburger"
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
           <span className={isMenuOpen ? "active" : ""}></span>
           <span className={isMenuOpen ? "active" : ""}></span>
           <span className={isMenuOpen ? "active" : ""}></span>
