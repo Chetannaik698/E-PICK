@@ -1,143 +1,186 @@
-    * {
-        margin: 0;
-        padding: 0;
-    }
-    
-    .contact {
-        display: flex;
-        flex-direction: column;
-        padding: 10px;
-        height: 800px;
-        width: 100%;
-    }
-    
-    .contact-us {
-        display: flex;
-        justify-content: center;
-        font-size: xx-large;
-        background-color: white;
-        align-items: center;
-        height: 100px;
-    }
-    
-    .contact-details {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        height: 700px;
-        padding-left: 30px;
-        /* border: 1px solid black; */
-        background-color: white;
-    }
-    
-    .contact-pic {
-        display: flex;
-        flex: 1;
-        gap: 20px;
-        width: 300px;
-        padding: 10px;
-        justify-content: end;
-        /* border: 1px solid black; */
-    }
-    
-    .contact-pic img {
-        width: 500px;
-    }
-    
-    .contact-info {
-        display: flex;
-        flex-direction: column;
-        margin-left: 50px;
-        padding: 30px;
-        /* border: 1px solid black; */
-        flex: 1;
-        background-color: white;
-    }
-    
-    .our-store {
-        flex: 0.7;
-        align-items: center;
-    }
-    
-    .address {
-        flex: 1;
-    }
-    
-    .tel {
-        flex: 1;
-    }
-    
-    .careers {
-        flex: 0.5;
-    }
-    
-    .learn {
-        flex: 1;
-    }
-    
-    .explore {
-        flex: 0.5;
-    }
-    
-    button {
-        background-color: white;
-        padding: 15px;
-    }
-    
-    .sub {
-        display: flex;
-        /* border: 1px solid black; */
-        height: 200px;
-        padding-top: 20px;
-        flex-direction: column;
-        background-color: white;
-    }
-    
-    .subscribe {
-        display: flex;
-        flex: 1;
-        /* border: 1px solid black; */
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .text {
-        display: flex;
-        flex: 1;
-        /* border: 1px solid black; */
-        align-items: center;
-        justify-content: center;
-        height: 8px;
-    }
-    
-    .enter {
-        display: flex;
-        flex: 1;
-        /* border: 1px solid black; */
-    }
-    
-    .enter1 {
-        display: flex;
-        flex: 1.5;
-        /* border: 1px solid black; */
-        align-items: center;
-        justify-content: end;
-    }
-    
-    .but {
-        display: flex;
-        flex: 1;
-        /* border: 1px solid black; */
-    }
-    
-    #subscribing {
-        border: 1px solid black;
-        background-color: black;
-        color: white;
-    }
-    
-    .enter1 input {
-        padding: 15px;
-        border: o.5px solid white;
-        width: 300px;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contact {
+  width: 100%;
+  background-color: #fff;
+  padding: 60px 4rem;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.contact-header h1 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #6b6b6b;
+  letter-spacing: 1px;
+}
+
+.header-line {
+  width: 60px;
+  height: 2px;
+  background-color: #6b6b6b;
+}
+
+.contact-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-image {
+  flex: 1;
+  max-width: 500px;
+}
+
+.contact-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.contact-info {
+  flex: 1;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.store-section h2,
+.careers-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #3a3a3a;
+  margin-bottom: 20px;
+}
+
+.store-section p {
+  font-size: 1rem;
+  color: #6b6b6b;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.address {
+  margin-bottom: 20px;
+}
+
+.careers-section p {
+  font-size: 1rem;
+  color: #6b6b6b;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.explore-btn {
+  padding: 14px 40px;
+  background-color: transparent;
+  color: #000;
+  border: 1.5px solid #000;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.explore-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .contact {
+    padding: 50px 2rem;
+  }
+
+  .contact-content {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 40px 1.5rem;
+  }
+
+  .contact-header {
+    margin-bottom: 40px;
+  }
+
+  .contact-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .header-line {
+    width: 50px;
+  }
+
+  .contact-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .contact-image,
+  .contact-info {
+    max-width: 100%;
+  }
+
+  .contact-info {
+    gap: 35px;
+  }
+
+  .store-section h2,
+  .careers-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .store-section p,
+  .careers-section p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 30px 1rem;
+  }
+
+  .contact-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .header-line {
+    width: 40px;
+  }
+
+  .store-section h2,
+  .careers-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .store-section p,
+  .careers-section p {
+    font-size: 0.9rem;
+  }
+
+  .explore-btn {
+    width: 100%;
+    padding: 12px 30px;
+  }
+}

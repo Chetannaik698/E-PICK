@@ -124,8 +124,8 @@ const Home = () => {
         <div className="products">
           {latestCollections.map((product) => {
             return (
-              <div className="product" key={product.id}>
-                <div className="product-image">
+              <div className="collection-product" key={product.id}>
+                <div className="collection-product-image">
                   <img src={product.image} alt={product.name} />
                 </div>
                 <h3>{product.name}</h3>
@@ -145,8 +145,8 @@ const Home = () => {
         <div className="products">
           {bestSellers.map((product) => {
             return (
-              <div className="product" key={product.id}>
-                <div className="product-image">
+              <div className="collection-product" key={product.id}>
+                <div className="collection-product-image">
                   <img src={product.image} alt={product.name} />
                 </div>
                 <h3>{product.name}</h3>

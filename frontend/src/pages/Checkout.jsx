@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Admin = () => {
+const Checkout = () => {
   return (
     <div>
-      Admin Page
+      checkout
     </div>
   )
 }
 
-export default Admin
+export default Checkout

@@ -25,7 +25,7 @@ const About = () => {
 
           <div className="about-text">
             <p>
-              Forever was born out of a passion for innovation and a desire to
+              E-PICK as born out of a passion for innovation and a desire to
               revolutionize the way people shop online. Our journey began with a
               simple idea: to provide a platform where customers can easily
               discover, explore, and purchase a wide range of products from the
@@ -43,48 +43,46 @@ const About = () => {
             <h3>Our Mission</h3>
 
             <p>
-              Our mission at Forever is to empower customers with choice,
+              Our mission at E-PICK is to empower customers with choice,
               convenience, and confidence. We're dedicated to providing a
               seamless shopping experience that exceeds expectations—from
               browsing and ordering to delivery and beyond.
             </p>
           </div>
         </div>
+
         <div className="text">
           WHY <span>CHOOSE US</span>
-                  </div>
-        <div className="card-section">
-          
-            <div class="card">
-            <h3>Quality Assurance:</h3>
-            <p>
-                We meticulously select and vet each
-                 product to ensure it meets 
-                our stringent quality standards.
-            </p>
-        </div>
-          
-          <div class="card">
-            <h3>Convenience:</h3>
-            <p>
-                With our user-friendly interface and hassle-free ordering process, 
-                shopping has never been easier.
-            </p>
         </div>
 
-        <div class="card">
+        <div className="card-section">
+          <div className="card">
+            <h3>Quality Assurance:</h3>
+            <p>
+              We meticulously select and vet each product to ensure it meets
+              our stringent quality standards.
+            </p>
+          </div>
+
+          <div className="card">
+            <h3>Convenience:</h3>
+            <p>
+              With our user-friendly interface and hassle-free ordering process,
+              shopping has never been easier.
+            </p>
+          </div>
+
+          <div className="card">
             <h3>Exceptional Customer Service:</h3>
             <p>
-                Our team of dedicated professionals is here to assist you 
-                the way, ensuring your satisfaction is our top priority.
+              Our team of dedicated professionals is here to assist you every
+              step of the way, ensuring your satisfaction is our top priority.
             </p>
-        </div>
-          
+          </div>
         </div>
       </section>
 
       <Discount />
-
       <Footer />
     </>
   );

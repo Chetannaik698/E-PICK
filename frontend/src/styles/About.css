@@ -30,6 +30,7 @@
   margin: 10px auto 0;
 }
 
+
 .about-content {
   display: flex;
   gap: 60px;
@@ -64,50 +65,83 @@
   font-weight: 600;
 }
 
-
-.text{
-  line-height: 5;
-  padding: 5px;
+.text {
+  padding: 15px 0;
   font-size: 25px;
   letter-spacing: 1px;
+  margin-top: 60px;
 }
 
-.text span{
+.text span {
   font-weight: 700;
-  
 }
 
-.card-section{
-    width: 90%;
-    height: 250px;
-    margin: 2px ;
-    display: flex;
-    /* border: 1px solid black; */
-    padding: 10px;
+.card-section {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
 }
 
-/* Card Design */
-.card{
-    flex: 1;
-    background-color: white;
-    padding: 40px;
-    border: 1px solid #777171;
-    /* border-right: 1px solid rgb(151, 144, 144); */
+.card {
+  flex: 1;
+  background-color: white;
+  padding: 30px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
 }
 
-/* Heading */
-.card h3{
-    color: #333;
-    margin-bottom: 20px;
+.card:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
-/* Paragraph */
-.card p{
-    color: #666;
-    line-height: 1.6;
-    font-size: 16px;
+.card h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+@media (max-width: 900px) {
+  .about-content {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .about-text {
+    text-align: center;
+  }
 }
 
 
+@media (max-width: 600px) {
+  .about-container {
+    padding: 40px 5%;
+  }
 
+  .about-header h2 {
+    font-size: 24px;
+  }
 
+  .about-text p {
+    font-size: 14px;
+  }
+
+  .text {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .card-section {
+    flex-direction: column;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
