@@ -6,8 +6,8 @@ import Collection from "./pages/Collection";
 import Contact from "./Pages/Contact";
 import Cart from "./Pages/Cart";
 import ProductDetails from "./pages/ProductDetails";
-import Admin from "./AdminPage/Admin";
-import Dashboard from "./AdminPage/Dashboard";
+import Admin from "./Admin/Admin";
+import Dashboard from "./Admin/Dashboard";
 import Orders from "./pages/Orders";
 import Checkout from "./pages/Checkout";
 
@@ -21,7 +21,7 @@ function App() {
           <Route path="/collection" element={<Collection />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/product" element={<ProductDetails />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin-dashboard" element={<Dashboard />} />
           <Route path="/orders" element={<Orders />} />
