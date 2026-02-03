@@ -8,7 +8,7 @@ const Discount = () => {
       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
       <div className="discount-input">
         <input type="email" placeholder="Enter your email" />
-        <button>SUBSCRIBE</button>
+        <button className="discount-button">SUBSCRIBE</button>
       </div>
     </div>
   );
