@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import logo from "../assets/logo.png";
 import search from "../assets/search.png";
 import profile from "../assets/profile.png";
+import logoutImg from "../assets/logout.png";
 import cart from "../assets/cart.png";
 import "../styles/Navbar.css";
 import { Link, useLocation } from "react-router-dom";
+import { AppContext } from "../context/AppContext";
 
 const Navbar = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showProfileMenu, setShowProfileMenu] = useState(false);
+  const { user, logout, cartData, getCartData } = useContext(AppContext);
 
   const isActive = (path) => {
     return location.pathname === path;
@@ -21,6 +25,23 @@ const Navbar = () => {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
+
+  const profileRef = useRef();
+
+  useEffect(() => {
+    const handler = (e) => {
+      if (profileRef.current && !profileRef.current.contains(e.target)) {
+        setShowProfileMenu(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  useEffect(() => {
+    getCartData();
+  }, []);
 
   return (
     <header>
@@ -71,19 +92,56 @@ const Navbar = () => {
         </ul>
 
         <div className="admin">
-          <Link to={"/admin"}>
+          <Link to={"/admin"} target="_blank" rel="noopener noreferrer">
             <span>Admin Panel</span>
           </Link>
         </div>
 
         <div className="nav-functions">
           <img src={search} alt="Search" />
-          <img src={profile} alt="Profile" />
+
+          {user ? (
+            <div className="profile-wrapper" ref={profileRef}>
+              <img
+                src={profile}
+                alt="Profile"
+                className="profile-icon"
+                onClick={() => setShowProfileMenu(!showProfileMenu)}
+              />
+
+              {showProfileMenu && (
+                <div className="profile-dropdown">
+                  <div className="profile-header">
+                    <p>{user.email}</p>
+                    <div className="profile-img">
+                      <span>{user.name[0]}</span>
+                    </div>
+                    <span>Hi, {user.name}!</span>
+                  </div>
+
+                  <div className="profile-actions">
+                    <Link to="/orders">
+                      <p>My Orders</p>
+                    </Link>
+                    <div className="breaker"></div>
+                    <p className="logout-btn" onClick={logout}>
+                      <img src={logoutImg} alt="" /> Logout
+                    </p>
+                  </div>
+                </div>
+              )}
+            </div>
+          ) : (
+            <Link to="/login">
+              <img src={profile} alt="Login" />
+            </Link>
+          )}
+
           <div className="cart-icon">
             <Link to="/cart">
               <img src={cart} alt="Cart" />
             </Link>
-            <span>0</span>
+            <span>{cartData.length}</span>
           </div>
         </div>
 

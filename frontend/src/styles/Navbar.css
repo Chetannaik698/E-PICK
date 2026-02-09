@@ -168,7 +168,139 @@ nav .nav-functions {
   transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* Responsive Styles */
+.profile-wrapper {
+  position: relative;
+}
+
+.profile-icon {
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.profile-icon:hover {
+  transform: scale(1.08);
+  opacity: 0.8;
+}
+
+.profile-dropdown {
+  position: absolute;
+  right: -60px;
+  top: 52px;
+
+  background: #1f1f1f;
+  color: white;
+
+  width: 290px;
+  padding: 18px;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+
+  z-index: 999;
+
+  animation: fadeScale 0.18s ease;
+}
+
+@keyframes fadeScale {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.profile-header span {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.profile-header p {
+  margin-bottom: 0.4rem;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.profile-img {
+  width: 56px;
+  height: 56px;
+
+  background: linear-gradient(135deg, #5b8cff, #7b61ff);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  margin: 0.6rem auto;
+
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+}
+
+.profile-img span {
+  font-size: 1.9rem;
+  font-weight: 600;
+}
+
+.profile-actions {
+  background: #111;
+
+  border-radius: 14px;
+
+  padding: 14px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  margin-top: 1rem;
+}
+
+.profile-actions .breaker {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.profile-actions p {
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  transition: background 0.15s ease;
+}
+
+.profile-actions p:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.logout-btn {
+  color: white;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logout-btn img {
+  filter: invert(1);
+}
+
+.logout-btn:hover {
+  background: rgba(255, 90, 90, 0.15) !important;
+}
+
 @media screen and (max-width: 1024px) {
   header {
     padding: 0 2rem;

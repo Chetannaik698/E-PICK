@@ -22,3 +22,49 @@ a {
   text-decoration: none;
   color: var(--color-body-text);
 }
+
+/* ================= GRID ================= */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  row-gap: 35px;
+}
+
+/* ================= CARD ================= */
+
+.product-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.image-container {
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background-color: #f9f9f9;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.08);
+}
+
+.product-name {
+  font-size: 13px;
+  margin-top: 10px;
+  color: #374151;
+}
+
+.product-price {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 5px;
+}

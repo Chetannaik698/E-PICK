@@ -10,6 +10,9 @@ import Admin from "./Admin/Admin";
 import Dashboard from "./Admin/Dashboard";
 import Orders from "./pages/Orders";
 import Checkout from "./pages/Checkout";
+import Login from "./pages/Login";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -26,7 +29,9 @@ function App() {
           <Route path="/admin-dashboard" element={<Dashboard />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
+        <ToastContainer position="top-right" autoClose={3000} />
       </Router>
     </>
   );

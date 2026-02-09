@@ -139,3 +139,26 @@ export const getBestsellerProducts = async (req, res) => {
   }
 };
 
+export const relatedProducts = async (req, res) => {
+  const { category, subCategory, productId } = req.query;
+
+  try {
+    const products = await productModel
+      .find({
+        category: category,
+        subCategory: subCategory,
+        _id: { $ne: productId },
+      })
+      .limit(4);
+
+    return res.status(200).json({
+      message: "Product fetched successfully",
+      products,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      message: "Failed to fetch the product",
+      error: error.message,
+    });
+  }
+};

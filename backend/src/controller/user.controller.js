@@ -2,7 +2,6 @@ import userModel from "../models/User.model.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
-//user registeration
 export const registerUser = async (req, res) => {
   const { name, email, password } = req.body;
 
@@ -19,13 +18,19 @@ export const registerUser = async (req, res) => {
       name,
       email,
       password: hashedPassword,
+      role: "user",
     });
 
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-      expiresIn: "1d",
-    });
+    const token = jwt.sign(
+      { id: user._id, role: user.role },
+      process.env.JWT_SECRET,
+      { expiresIn: "1d" },
+    );
 
-    res.cookie("token", token);
+    res.cookie("user_token", token, {
+      httpOnly: true,
+      sameSite: "lax",
+    });
 
     res.status(201).json({
       message: "User registered successfully",
@@ -36,20 +41,20 @@ export const registerUser = async (req, res) => {
       },
     });
   } catch (error) {
-    res
-      .status(500)
-      .json({ message: "Internal server error", error: error.message });
+    res.status(500).json({
+      message: "Failed to Register User",
+      error: error.message,
+    });
   }
 };
 
-//user login
 export const loginUser = async (req, res) => {
   const { email, password } = req.body;
 
   try {
     const user = await userModel.findOne({ email });
 
-    if (!user) {
+    if (!user || user.role !== "user") {
       return res.status(400).json({ message: "Invalid email or password" });
     }
 
@@ -59,11 +64,18 @@ export const loginUser = async (req, res) => {
       return res.status(400).json({ message: "Invalid email or password" });
     }
 
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+    const token = jwt.sign(
+      { id: user._id, role: user.role },
+      process.env.JWT_SECRET,
+      { expiresIn: "1d" },
+    );
 
-    res.cookie("token", token);
+    res.cookie("user_token", token, {
+      httpOnly: true,
+      sameSite: "lax",
+    });
 
-    res.status(201).json({
+    res.status(200).json({
       message: "User logged in successfully",
       user: {
         id: user._id,
@@ -71,26 +83,30 @@ export const loginUser = async (req, res) => {
         email: user.email,
       },
     });
-  } catch (error) {}
-};
-
-//user get me
-export const getMe = async (req, res) => {
-  try {
-    const user = req.user;
-
-    res.status(200).json({
-      message: "User fetched successfully",
-      user,
-    });
   } catch (error) {
     res.status(500).json({
-      message: "Internal server error",
+      message: "Failed to Login User",
+      error: error.message,
     });
   }
 };
 
-//admin login
+export const logoutUser = async (req, res) => {
+  res.clearCookie("user_token");
+  res.status(200).json({
+    message: "User logged out successfully",
+  });
+};
+
+export const getMe = async (req, res) => {
+  try {
+    const user = req.user;
+    res.status(200).json({ message: "User fetched successfully", user });
+  } catch (error) {
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
 export const loginAdmin = async (req, res) => {
   const { email, password } = req.body;
 
@@ -109,11 +125,18 @@ export const loginAdmin = async (req, res) => {
       return res.status(400).json({ message: "Invalid email or password" });
     }
 
-    const token = jwt.sign({ id: admin._id }, process.env.JWT_SECRET);
+    const token = jwt.sign(
+      { id: admin._id, role: admin.role },
+      process.env.JWT_SECRET,
+      { expiresIn: "1d" },
+    );
 
-    res.cookie("token", token);
+    res.cookie("admin_token", token, {
+      httpOnly: true,
+      sameSite: "lax",
+    });
 
-    return res.status(201).json({
+    return res.status(200).json({
       message: "Admin logged in successfully",
       admin: {
         id: admin._id,
@@ -124,6 +147,20 @@ export const loginAdmin = async (req, res) => {
   } catch (error) {
     res.status(500).json({
       message: "Internal server error",
+    });
+  }
+};
+
+export const logoutAdmin = async (req, res) => {
+  try {
+    res.clearCookie("admin_token");
+
+    res.status(200).json({
+      message: "Admin logged out successfully",
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "Internal Server error",
     });
   }
 };

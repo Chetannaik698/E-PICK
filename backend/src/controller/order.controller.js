@@ -42,7 +42,7 @@ export const placeOrder = async (req, res) => {
         quantity: item.quantity,
       });
     }
-    const shippingFee = subtotal > 2000 ? 0 : 100;
+    const shippingFee = subtotal > 500 ? 0 : 50;
     const totalAmount = subtotal + shippingFee;
 
     const order = await orderModel.create({
@@ -69,6 +69,25 @@ export const placeOrder = async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       message: "Failed to place order",
+      error: error.message,
+    });
+  }
+};
+
+export const getUserOrders = async (req, res) => {
+  try {
+    const orders = await orderModel
+      .find({ user: req.user._id })
+      .populate("items.product")
+      .sort({ createdAt: -1 });
+
+    return res.status(200).json({
+      message: "Orders fetched successfully",
+      orders,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      message: "Failed to fetch orders",
       error: error.message,
     });
   }

@@ -73,7 +73,7 @@ export const getCart = async (req, res) => {
     }
 
     return res.status(200).json({
-      message: "Cart Items Detched",
+      message: "Cart Items Fetched",
       cartItems,
     });
   } catch (error) {

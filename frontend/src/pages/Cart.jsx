@@ -1,11 +1,39 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import '../styles/Cart.css'
+import React, { use, useContext, useEffect, useState } from "react";
+import Navbar from "../components/Navbar";
+import "../styles/Cart.css";
 import image8 from "../assets/image8.png";
 import deleteIcon from "../assets/delete.png";
-import Footer from '../components/Footer'
+import Footer from "../components/Footer";
+import api from "../API/axios";
+import { AppContext } from "../context/AppContext";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
+  const { cartData, getCartData, total, subTotal, shippingFee } = useContext(AppContext);
+
+  const navigate = useNavigate();
+
+  const handleDeleteItem = async (itemId) => {
+    try {
+      const response = await api.delete(`/cart/${itemId}`);
+      console.log(response.data);
+      toast.success(response.data.message);
+      await getCartData();
+    } catch (error) {
+      toast.error(error.response?.data?.message || error.message);
+    }
+  };
+
+  const handleCheckOut = () => {
+    if (cartData.length === 0) {
+      toast.error("Your cart is empty. Please add items to proceed.");
+      return;
+    }
+    navigate("/checkout");
+  }
+
+
   return (
     <>
       <Navbar />
@@ -17,37 +45,36 @@ const Cart = () => {
         </div>
 
         <div className="cart-content">
-          {/* Cart Items */}
           <div className="cart-items">
-            <div className="cart-item">
-              <img src={image8} alt="product" className="item-image" />
-              <div className="item-details">
-                <h3>Kid Tapered Slim Fit Trouser</h3>
-                <div className="item-price-size">
-                  <span className="price">$38</span>
-                  <span className="size">S</span>
+            {cartData.map((item) => {
+              return (
+                <div className="cart-item" key={item._id}>
+                  <img
+                    src={item.product.images[0]}
+                    alt="product"
+                    className="item-image"
+                  />
+                  <div className="item-details">
+                    <h3>{item?.product?.name}</h3>
+                    <div className="item-price-size">
+                      <span className="price">{item?.product?.price}</span>
+                      <span className="size">{item?.size}</span>
+                    </div>
+                  </div>
+                  <input
+                    type="number"
+                    value={item?.quantity}
+                    className="item-quantity"
+                  />
+                  <button
+                    className="delete-btn"
+                    onClick={() => handleDeleteItem(item._id)}
+                  >
+                    <img src={deleteIcon} alt="delete" />
+                  </button>
                 </div>
-              </div>
-              <input type="number" value="1" className="item-quantity" />
-              <button className="delete-btn">
-                <img src={deleteIcon} alt="delete" />
-              </button>
-            </div>
-
-            <div className="cart-item">
-              <img src={image8} alt="product" className="item-image" />
-              <div className="item-details">
-                <h3>Boy Round Neck Pure Cotton T-shirt</h3>
-                <div className="item-price-size">
-                  <span className="price">$60</span>
-                  <span className="size">M</span>
-                </div>
-              </div>
-              <input type="number" value="2" className="item-quantity" />
-              <button className="delete-btn">
-                <img src={deleteIcon} alt="delete" />
-              </button>
-            </div>
+              );
+            })}
           </div>
 
           {/* Cart Totals */}
@@ -60,18 +87,18 @@ const Cart = () => {
             <div className="totals-content">
               <div className="total-row">
                 <span>Subtotal</span>
-                <span>$ 158.00</span>
+                <span>₹{subTotal.toFixed(2)}</span>
               </div>
               <div className="total-row">
                 <span>Shipping Fee</span>
-                <span>$ 10.00</span>
+                <span>₹{shippingFee.toFixed(2)}</span>
               </div>
               <div className="total-row total-final">
                 <span>Total</span>
-                <span>$ 168.00</span>
+                <span>₹{total.toFixed(2)}</span>
               </div>
 
-              <button className="checkout-btn">PROCEED TO CHECKOUT</button>
+              <button className="checkout-btn" onClick={handleCheckOut}>PROCEED TO CHECKOUT</button>
             </div>
           </div>
         </div>
@@ -79,7 +106,7 @@ const Cart = () => {
 
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Cart
+export default Cart;

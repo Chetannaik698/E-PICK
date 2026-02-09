@@ -166,8 +166,16 @@
   transition: background-color 0.3s;
 }
 
+.X, .M, .L, .XL, .XXL {
+  border: 1px solid orange !important;
+}
+
 .checkout-btn:hover {
   background-color: #333;
+}
+
+.selected {
+  border: 1px solid orange !important;
 }
 
 /* Responsive Design */

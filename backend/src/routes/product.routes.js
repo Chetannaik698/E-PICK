@@ -5,6 +5,7 @@ import {
   getAllProducts,
   getBestsellerProducts,
   getProductById,
+  relatedProducts,
 } from "../controller/product.controller.js";
 import { adminOnly, protect } from "../middleware/user.middleware.js";
 import { upload } from "../middleware/upload.middleware.js";
@@ -15,6 +16,7 @@ const router = express.Router();
 router.post("/", protect, adminOnly, upload.array("images", 5), createProduct);
 router.get("/", getAllProducts);
 router.get("/bestsellers", getBestsellerProducts);
+router.get("/relatedproducts", relatedProducts);
 router.get("/:id", getProductById);
 router.delete("/:id", protect, adminOnly, deleteProductById);
 

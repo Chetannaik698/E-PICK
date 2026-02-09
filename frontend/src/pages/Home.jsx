@@ -40,19 +40,21 @@ const Home = () => {
         </div>
 
         <div className="products">
-          {products.slice(0, 10).map((product) => {
-            return (
-              <Link to={`/product/${product._id}`} key={product._id}>
-                <div className="collection-product">
-                  <div className="collection-product-image">
-                    <img src={product.images[0]} alt={product.name} />
-                  </div>
-                  <h3>{product.name}</h3>
-                  <p className="price">₹{product.price}</p>
+          <div className="product-grid">
+            {products.slice(0, 8).map((product) => (
+              <Link
+                to={`/product/${product._id}`}
+                key={product._id}
+                className="product-card"
+              >
+                <div className="image-container">
+                  <img src={product.images[0]} alt={product.name} />
                 </div>
+                <p className="product-name">{product.name}</p>
+                <p className="product-price">₹{product.price}</p>
               </Link>
-            );
-          })}
+            ))}
+          </div>
         </div>
 
         <div className="best-sellers">
@@ -61,19 +63,21 @@ const Home = () => {
         </div>
 
         <div className="products">
-          {bestSeller.slice(0, 5).map((product) => {
-            return (
-              <Link to={`/product/${product._id}`} key={product._id}>
-              <div className="collection-product" >
-                <div className="collection-product-image">
+          <div className="product-grid">
+            {bestSeller.slice(0, 4  ).map((product) => (
+              <Link
+                to={`/product/${product._id}`}
+                key={product._id}
+                className="product-card"
+              >
+                <div className="image-container">
                   <img src={product.images[0]} alt={product.name} />
                 </div>
-                <h3>{product.name}</h3>
-                <p className="price">₹{product.price}</p>
-              </div>
+                <p className="product-name">{product.name}</p>
+                <p className="product-price">₹{product.price}</p>
               </Link>
-            );
-          })}
+            ))}
+          </div>
         </div>
 
         <div className="services">

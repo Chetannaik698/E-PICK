@@ -168,3 +168,69 @@
   font-size: 1rem;
   color: var(--color-body-text);
 }
+
+@media (max-width: 1024px) {
+  .hero {
+    padding: 0 2rem;
+    height: auto;
+  }
+
+  .hero .theme {
+    flex-direction: column;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+  }
+
+  .right {
+    height: 350px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 0 1rem;
+  }
+
+  .hero .theme {
+    flex-direction: column;
+  }
+
+  .hero-content {
+    text-align: center;
+    padding: 1.2rem;
+  }
+
+  .hero-content .label {
+    font-size: 0.75rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .hero-content .shop-label {
+    margin-top: 1.5rem;
+  }
+
+  .right {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .right {
+    height: 240px;
+  }
+}
