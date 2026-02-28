@@ -3,8 +3,8 @@ import productModel from "../models/product.model.js";
 import fs from "fs";
 
 //create product
-export const createProduct = async (req, res) => {
-  const {
+export const addProduct = async (req, res) => {
+  let {
     name,
     description,
     price,
@@ -16,6 +16,10 @@ export const createProduct = async (req, res) => {
   } = req.body;
 
   try {
+    if (sizes) {
+      sizes = JSON.parse(sizes);
+    }
+
     const imageUrls = [];
 
     if (req.files && req.files.length > 0) {
@@ -43,10 +47,10 @@ export const createProduct = async (req, res) => {
 
       images: imageUrls,
 
-      createdBy: req.user._id,
+      createdBy: req.admin._id,
     });
 
-    return res.status(201).json({
+    return res.status(200).json({
       message: "Product created successfully",
       product,
     });
@@ -123,42 +127,3 @@ export const deleteProductById = async (req, res) => {
   }
 };
 
-export const getBestsellerProducts = async (req, res) => {
-  try {
-    const products = await productModel.find({ bestSeller: true });
-
-    return res.status(200).json({
-      message: "Fetched best seller products",
-      products,
-    });
-  } catch (error) {
-    return res.status(500).json({
-      message: "Error fetching products",
-      error: error.message,
-    });
-  }
-};
-
-export const relatedProducts = async (req, res) => {
-  const { category, subCategory, productId } = req.query;
-
-  try {
-    const products = await productModel
-      .find({
-        category: category,
-        subCategory: subCategory,
-        _id: { $ne: productId },
-      })
-      .limit(4);
-
-    return res.status(200).json({
-      message: "Product fetched successfully",
-      products,
-    });
-  } catch (error) {
-    return res.status(500).json({
-      message: "Failed to fetch the product",
-      error: error.message,
-    });
-  }
-};

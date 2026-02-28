@@ -8,18 +8,20 @@ import api from "../API/axios";
 import { Link, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AppContext } from "../context/AppContext";
+import { ClipLoader } from "react-spinners";
 
 const ProductDetails = () => {
   const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [relatedProducts, setRelatedProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [selectedSize, setSelectedSize] = useState(null);
 
-  const { getCartData, user } = useContext(AppContext);
+  const { getCartData, user, products } = useContext(AppContext);
 
   const { id } = useParams();
 
   useEffect(() => {
+    setLoading(true);
+
     const fetchProductData = async () => {
       try {
         const response = await api.get(`/products/${id}`);
@@ -34,27 +36,13 @@ const ProductDetails = () => {
     fetchProductData();
   }, [id]);
 
-  useEffect(() => {
-    if (!product) {
-      return;
-    }
 
-    const fetchRelatedProducts = async () => {
-      try {
-        const response = await api.get("/products/relatedproducts", {
-          params: {
-            productId: id,
-            category: product.category,
-            subCategory: product.subCategory,
-          },
-        });
-        setRelatedProducts(response.data.products);
-      } catch (error) {
-        console.log(err.response?.data?.message || err.message);
-      }
-    };
-    fetchRelatedProducts();
-  }, [id, product]);
+  const relatedProducts = products.filter(
+    (p) =>
+      p.category === product?.category &&
+      p.subCategory === product?.subCategory &&
+      p._id !== product._id,
+  );
 
   const handleSizeSelect = (size) => {
     setSelectedSize(size);
@@ -88,8 +76,8 @@ const ProductDetails = () => {
     return (
       <>
         <Navbar />
-        <p style={{ textAlign: "center", marginTop: "120px" }}>
-          Loading product...
+        <p style={{ textAlign: "center", margin: "120px" }}>
+          <ClipLoader color="#000" size={50} />
         </p>
         <Footer />
       </>
@@ -179,7 +167,7 @@ const ProductDetails = () => {
           <div className="products">
             <h1>Related Products</h1>
             <div className="product-grid">
-              {relatedProducts.map((product) => (
+              {relatedProducts.slice(0, 4).map((product) => (
                 <Link
                   to={`/product/${product._id}`}
                   key={product._id}

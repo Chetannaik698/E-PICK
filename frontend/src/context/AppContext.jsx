@@ -6,7 +6,6 @@ export const AppContext = createContext();
 
 export const AppContextProvider = (props) => {
   const [products, setProducts] = useState([]);
-  const [bestSeller, setBestSeller] = useState([]);
   const [user, setUser] = useState();
   const [cartData, setCartData] = useState([]);
 
@@ -35,18 +34,6 @@ export const AppContextProvider = (props) => {
     fetchProducts();
   }, []);
 
-  useEffect(() => {
-    const fetchLatestProducts = async () => {
-      try {
-        const response = await api.get("/products/bestsellers");
-        setBestSeller(response.data.products);
-      } catch (error) {
-        console.log(error.response?.data?.message || error.message);
-      }
-    };
-
-    fetchLatestProducts();
-  }, []);
 
   const fetchMe = async () => {
     try {
@@ -102,7 +89,6 @@ export const AppContextProvider = (props) => {
 
   const value = {
     products,
-    bestSeller,
     user,
     login,
     register,

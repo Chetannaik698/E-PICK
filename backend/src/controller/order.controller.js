@@ -92,3 +92,51 @@ export const getUserOrders = async (req, res) => {
     });
   }
 };
+
+export const geAllOrders = async (req, res) => {
+  try {
+    const orders = await orderModel
+      .find()
+      .populate("user", "name, email")
+      .populate("items.product", "name price images")
+      .populate("shippingAddress")
+      .sort({ createdAt: -1 });
+
+    return res.status(200).json({
+      message: "Orders fetched successfully",
+      orders,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      message: "Failed to fetch orders",
+      error: error.message,
+    });
+  }
+};
+
+export const updateOrderStatus = async (req, res) => {
+  try {
+    const { orderId } = req.params;
+    const { status } = req.body;
+
+    const order = await orderModel.findById(orderId);
+
+    if (!order) {
+      return res.status(404).json({
+        message: "order not found",
+      });
+    }
+
+    order.orderStatus = status;
+    await order.save();
+
+    return res.status(200).json({
+      message: "Status updated successfully",
+    });
+  } catch (error) {
+    return res.status(500).json({
+      message: "Failed to update order status",
+      error: error.message,
+    });
+  }
+};

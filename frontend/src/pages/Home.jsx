@@ -11,7 +11,9 @@ import { AppContext } from "../context/AppContext";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-  const { products, bestSeller } = useContext(AppContext);
+  const { products } = useContext(AppContext);
+
+  const bestSeller = products.filter((product) => product.bestSeller);
 
   return (
     <div>
@@ -64,7 +66,7 @@ const Home = () => {
 
         <div className="products">
           <div className="product-grid">
-            {bestSeller.slice(0, 4  ).map((product) => (
+            {bestSeller.slice(0, 4).map((product) => (
               <Link
                 to={`/product/${product._id}`}
                 key={product._id}

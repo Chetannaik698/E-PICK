@@ -1,27 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../styles/Order.css";
-import image4 from "../assets/image4.png";
-import image3 from "../assets/image3.png";
-import image6 from "../assets/image6.png";
 import api from "../API/axios";
 
 const Orders = () => {
-  const [orders, setOrders] = React.useState([]);
+  const [orders, setOrders] = useState([]);
 
-  const fetchOrders = async () => {
-    try {
-      const response = await api.get("/orders/");
-      setOrders(response.data.orders);
-      console.log(response.data.orders);
-    } catch (error) {
-      console.log("Error in fetching orders:", error);
-    }
-  };
+  useEffect(() => {
+    const fetchOrders = async () => {
+      try {
+        const response = await api.get("/orders/");
+        setOrders(response.data.orders);
+        console.log(response.data.orders);
+      } catch (error) {
+        console.log("Error in fetching orders:", error);
+      }
+    };
 
-  React.useEffect(() => {
     fetchOrders();
+
+    const interval = setInterval(fetchOrders, 5000);
+
+    return () => clearInterval(interval);
   }, []);
 
   console.log("orders: ", orders);
