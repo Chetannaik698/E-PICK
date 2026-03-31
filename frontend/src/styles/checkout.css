@@ -1,0 +1,103 @@
+.checkout-wrapper {
+  margin: 80px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.checkout-container {
+  width: 90%;
+  display: flex;
+  gap: 60px;
+}
+
+.section-title {
+  font-family: Poppins;
+  font-size: 16px;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.section-title span {
+  flex: 1;
+  height: 2px;
+  background: #222;
+}
+
+.delivery-section {
+  flex: 1;
+}
+
+.delivery-section input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.two-col {
+  display: flex;
+  gap: 15px;
+}
+
+.summary-section {
+  width: 380px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.row.total {
+  border-bottom: none;
+  font-weight: bold;
+}
+
+.payment {
+  margin-top: 35px;
+}
+
+.payment-options {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.pay-card {
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.pay-card input {
+  accent-color: green;
+}
+
+.pay-card.active {
+  border: 2px solid green;
+}
+
+.place-order-btn {
+  margin-top: 35px;
+  background: black;
+  color: white;
+  width: 100%;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
