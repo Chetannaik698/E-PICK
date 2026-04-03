@@ -1,5 +1,5 @@
 import React from "react";
-import "./Admin.css";  //css
+import "./admin.css";  //css
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import api from "../API/axios";
