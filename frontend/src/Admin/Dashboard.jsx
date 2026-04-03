@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Admin.css";
+import "./admin.css";
 import AdminNav from "../assets/admin-logo.png";
 import Add from "../assets/add.png";
 import list from "../assets/check.png";
