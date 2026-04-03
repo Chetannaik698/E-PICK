@@ -1,10 +1,10 @@
 import { React } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import About from "./Pages/About";
+import About from "./pages/About";
 import Collection from "./pages/Collection";
-import Contact from "./Pages/Contact";
-import Cart from "./Pages/Cart";
+import Contact from "./pages/Contact";
+import Cart from "./pages/Cart";
 import ProductDetails from "./pages/ProductDetails";
 import Admin from "./Admin/Admin";
 import Dashboard from "./Admin/Dashboard";
