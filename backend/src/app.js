@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://e-pick-2k3k.vercel.app/",
+    origin: ["https://e-pick-2k3k.vercel.app", "http://localhost:5173"],
     credentials: true,
   }),
 );
