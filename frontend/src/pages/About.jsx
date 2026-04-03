@@ -59,8 +59,8 @@ const About = () => {
           <div className="card">
             <h3>Quality Assurance:</h3>
             <p>
-              We meticulously select and vet each product to ensure it meets
-              our stringent quality standards.
+              We meticulously select and vet each product to ensure it meets our
+              stringent quality standards.
             </p>
           </div>
 
