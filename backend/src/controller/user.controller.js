@@ -27,10 +27,16 @@ export const registerUser = async (req, res) => {
       { expiresIn: "1d" },
     );
 
-    res.cookie("user_token", token, {
+    // set cookie options so cross-site requests (frontend on different origin)
+    // can include the cookie in production. Use 'none' + secure for production,
+    // keep 'lax' for local development.
+    const cookieOptions = {
       httpOnly: true,
-      sameSite: "lax",
-    });
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+      secure: process.env.NODE_ENV === "production",
+    };
+
+    res.cookie("user_token", token, cookieOptions);
 
     res.status(201).json({
       message: "User registered successfully",
@@ -70,10 +76,13 @@ export const loginUser = async (req, res) => {
       { expiresIn: "1d" },
     );
 
-    res.cookie("user_token", token, {
+    const cookieOptions = {
       httpOnly: true,
-      sameSite: "lax",
-    });
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+      secure: process.env.NODE_ENV === "production",
+    };
+
+    res.cookie("user_token", token, cookieOptions);
 
     res.status(200).json({
       message: "User logged in successfully",
@@ -92,7 +101,12 @@ export const loginUser = async (req, res) => {
 };
 
 export const logoutUser = async (req, res) => {
-  res.clearCookie("user_token");
+  // Clear cookie using same options to ensure it's removed in production
+  const clearOptions = {
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+    secure: process.env.NODE_ENV === "production",
+  };
+  res.clearCookie("user_token", clearOptions);
   res.status(200).json({
     message: "User logged out successfully",
   });
@@ -131,10 +145,13 @@ export const loginAdmin = async (req, res) => {
       { expiresIn: "1d" },
     );
 
-    res.cookie("admin_token", token, {
+    const cookieOptions = {
       httpOnly: true,
-      sameSite: "lax",
-    });
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+      secure: process.env.NODE_ENV === "production",
+    };
+
+    res.cookie("admin_token", token, cookieOptions);
 
     return res.status(200).json({
       message: "Admin logged in successfully",
@@ -153,7 +170,12 @@ export const loginAdmin = async (req, res) => {
 
 export const logoutAdmin = async (req, res) => {
   try {
-    res.clearCookie("admin_token");
+    const clearOptions = {
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+      secure: process.env.NODE_ENV === "production",
+    };
+
+    res.clearCookie("admin_token", clearOptions);
 
     res.status(200).json({
       message: "Admin logged out successfully",
